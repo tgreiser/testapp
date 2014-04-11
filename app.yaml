@@ -1,0 +1,13 @@
+application: kk-fresh-service
+version: v1
+runtime: go
+api_version: go1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: _go_app
+
+# This makes API discovery work
+- url: /_ah/spi/.*
+  script: _go_app
