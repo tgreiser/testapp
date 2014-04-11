@@ -6,13 +6,12 @@ import (
   "github.com/stretchr/goweb"
   "github.com/stretchr/goweb/context"
   "github.com/tgreiser/testapp/pinger"
-  "net/http"
   "os"
 )
 
-func mapRoutes() {
+func MapRoutes() {
   goweb.Map("/test", func(c context.Context) error {
-    return goweb.Respond.With(c, 200, []byte("Welcome to the Goweb example app - Ping? " + Ping()))
+    return goweb.Respond.With(c, 200, []byte("Welcome to the Goweb example app - Ping? " + pinger.Ping()))
   })
 
   goweb.Map("GET", "people/me", func(c context.Context) error {
@@ -27,7 +26,4 @@ func mapRoutes() {
   })
 }
 
-func init() {
-  mapRoutes()
-  http.Handle("/", goweb.DefaultHttpHandler())
-}
+

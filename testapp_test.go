@@ -18,7 +18,7 @@ func TestRoutes(t *testing.T) {
   goweb.SetDefaultHttpHandler(handler)
 
   // call the target code
-  mapRoutes()
+  MapRoutes()
 
   goweb.Test(t, "GET people/me", func(t *testing.T, response *testifyhttp.TestResponseWriter) {
 
