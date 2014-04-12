@@ -1,4 +1,5 @@
-application: kk-fresh-service
+application: tng-test-service
+module: default
 version: v1
 runtime: go
 api_version: go1
